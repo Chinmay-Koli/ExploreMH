@@ -1,4 +1,3 @@
-
 import { initializeApp, getApp, getApps } from 'firebase/app';
 import { 
   getAuth, 
@@ -9,7 +8,8 @@ import {
   GithubAuthProvider, 
   onAuthStateChanged, 
   signOut,
-  User as FirebaseUser
+  User as FirebaseUser,
+  Auth
 } from 'firebase/auth';
 import { User, TripItinerary } from './types';
 
@@ -23,9 +23,10 @@ const firebaseConfig = {
   appId: "1:123456789:web:abcdef"
 };
 
-// Standard robust initialization
+// Robust initialization pattern for Modular Firebase SDK
+// Using exactly one instance of the app across the entire lifetime
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-const auth = getAuth(app);
+const auth: Auth = getAuth(app);
 
 const STORAGE_KEY_PREFIX = 'exploremh_data_';
 
