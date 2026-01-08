@@ -1,0 +1,7 @@
+{
+  "name": "ExploreMH - Maharashtra Travel Recommender",
+  "description": "A personalized travel itinerary planner for Maharashtra powered by Gemini AI, featuring multimodal image recognition, weather-aware planning, and local cultural insights.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
